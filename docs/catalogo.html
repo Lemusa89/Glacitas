@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galletas Glacitas</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+  <nav class="p-4 text-white">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold"><img class="h-20 " src="./img/logo.png" alt=""></a>
+      <div class="hidden md:block">
+        <a href="index.html" class="button mx-2 hover:underline">Inicio</a>
+        <a href="registro.html" class="button mx-2 hover:underline">Registrar</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mx-auto my-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card cafe  rounded-lg shadow-lg overflow-hidden hover:shadow-xl relative flex justify-center items-center">
+        <div class="w-full h-48 sm:h-64 bg-cover bg-center">
+          <img src="./img/cafe.png" alt="Café" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 card-content">
+            <div class="text-white text-center">
+              <h3 class="text-lg sm:text-xl font-semibold mb-2">Café</h3>
+              <p class="text-gray-100 text-sm sm:text-base">Disfruta del intenso y reconfortante sabor a café en cada bocado.</p>
+            </div>
+          </div>
+          <p class="titulo permanent-marker-regular flex justify-center text-3xl sm:text-4xl">Cafe</p>
+        </div>
+      </div>
+      <div class="card chocolate rounded-lg shadow-lg overflow-hidden hover:shadow-xl relative flex justify-center items-center">
+        <div class="w-full h-48 sm:h-64 bg-cover bg-center";">
+          <img src="./img/chocolate.png" alt="Chocolate" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 card-content">
+            <div class="text-white text-center">
+              <h3 class="text-lg sm:text-xl font-semibold mb-2">Chocolate</h3>
+              <p class="text-gray-100 text-sm sm:text-base">Deléitate con la rica y cremosa experiencia del chocolate puro.</p>
+            </div>
+          </div>
+          <p class="titulo permanent-marker-regular flex justify-center text-3xl sm:text-4xl">Chocolate</p>
+        </div>
+      </div>
+      <div class="card limon rounded-lg shadow-lg overflow-hidden hover:shadow-xl relative flex justify-center items-center">
+        <div class="w-full h-48 sm:h-64 bg-cover bg-center">
+          <img src="./img/limon.png" alt="Limón" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 card-content">
+            <div class="text-white text-center">
+              <h3 class="text-lg sm:text-xl font-semibold mb-2">Limón</h3>
+              <p class="text-gray-100 text-sm sm:text-base">Fresco y vibrante, el sabor a limón te llenará de energía.</p>
+            </div>
+          </div>
+          <p class="titulo permanent-marker-regular flex justify-center text-3xl sm:text-4xl">Limón</p>
+        </div>
+      </div>
+      <div class="card fresa rounded-lg shadow-lg overflow-hidden hover:shadow-xl relative flex justify-center items-center">
+        <div class="w-full h-48 sm:h-64 bg-cover bg-center" >
+          <img src="./img/fresa.png" alt="Fresa" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 card-content">
+            <div class="text-white text-center">
+              <h3 class="text-lg sm:text-xl font-semibold mb-2">Fresa</h3>
+              <p class="text-gray-100 text-sm sm:text-base">La dulzura natural de las fresas en una deliciosa galleta.</p>
+            </div>
+          </div>
+          <p class="titulo permanent-marker-regular flex justify-center text-3xl sm:text-4xl">Fresa</p>
+        </div>
+      </div>
+      <div class="card choconieve rounded-lg shadow-lg overflow-hidden hover:shadow-xl relative flex justify-center items-center">
+        <div class="w-full h-48 sm:h-64 bg-cover bg-center">
+          <img src="./img/choconieve.png" alt="choconieve" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 card-content">
+            <div class="text-white text-center">
+              <h3 class="text-lg sm:text-xl font-semibold mb-2">Choconieve</h3>
+              <p class="text-gray-100 text-sm sm:text-base">Una combinación perfecta de chocolate y vainilla, una delicia para todos.</p>
+            </div>
+          </div>
+          <p class="titulo permanent-marker-regular flex justify-center text-3xl sm:text-4xl">Choconieve</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="animated-image-container">
+    <img src="./img/galletaCafe.png" alt="Galleta Café" class="animated-image">
+    <img src="./img/galletaChocolate.png" alt="Galleta Chocolate" class="animated-image">
+    <img src="./img/galletaChoconieve.png" alt="Galleta Choconieve" class="animated-image">
+    <img src="./img/galletaFresa.png" alt="Galleta Fresa" class="animated-image">
+    <img src="./img/galletaLimon.png" alt="Galleta Limón" class="animated-image">
+  </div>
+
+  <footer class=" text-white py-4 mt-auto">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Galletas Glacitas. Todos los derechos reservados.</p>
+      <p><a href="#" class="text-white underline hover:text-gray-300">Contacto</a>
+        <a href="#" class="text-white underline hover:text-gray-300">Términos y Condiciones</a>
+        <a href="#" class="text-white underline hover:text-gray-300">Política de Privacidad</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

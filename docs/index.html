@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - Galletas Glacitas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+    }
+
+
+
+    .main-content {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+      border-radius: 10px;
+      color: white;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .animated-image-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+
+    .animated-image {
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      opacity: 0.8;
+      animation-duration: 10s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+
+    .animated-image:nth-child(1) {
+      top: 10vh;
+      left: -30vw;
+      animation-name: moveDiagonal1;
+      animation-duration: 15s;
+    }
+
+    .animated-image:nth-child(2) {
+      top: 30vh;
+      left: -20vw;
+      animation-name: moveDiagonal2;
+      animation-duration: 12s;
+    }
+
+    .animated-image:nth-child(3) {
+      top: 50vh;
+      left: -10vw;
+      animation-name: moveDiagonal3;
+      animation-duration: 10s;
+    }
+
+    .animated-image:nth-child(4) {
+      top: 70vh;
+      left: 110vw;
+      animation-name: moveDiagonal4;
+      animation-duration: 13s;
+    }
+
+    .animated-image:nth-child(5) {
+      top: 90vh;
+      left: 120vw;
+      animation-name: moveDiagonal5;
+      animation-duration: 11s;
+    }
+
+    @keyframes moveDiagonal1 {
+      0% { transform: translate(-30vw, 0); }
+      100% { transform: translate(calc(100vw + 30vw), calc(100vh + 30vh)); }
+    }
+
+    @keyframes moveDiagonal2 {
+      0% { transform: translate(-20vw, 0); }
+      100% { transform: translate(calc(100vw + 20vw), calc(100vh + 20vh)); }
+    }
+
+    @keyframes moveDiagonal3 {
+      0% { transform: translate(-10vw, 0); }
+      100% { transform: translate(calc(100vw + 10vw), calc(100vh + 10vh)); }
+    }
+
+    @keyframes moveDiagonal4 {
+      0% { transform: translate(110vw, 0); }
+      100% { transform: translate(calc(-100vw - 10vw), calc(-100vh - 10vh)); }
+    }
+
+    @keyframes moveDiagonal5 {
+      0% { transform: translate(120vw, 0); }
+      100% { transform: translate(calc(-100vw - 20vw), calc(-100vh - 20vh)); }
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        padding: 1rem;
+        max-width: 100%;
+        margin: 1rem;
+      }
+
+      .animated-image {
+        width: 100px;
+        height: 100px;
+      }
+
+      main {
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .animated-image {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    .logo{
+        background-image: url(./img/logo.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 210px;
+        height: 80px;
+    }
+
+    .degradado1{
+        /* width: 1050px;
+        height: 700px; */
+        rotate: 25deg;
+        background: linear-gradient(to bottom, #FF7D29 50%, #dbacbc00 90%);
+        filter: blur(70px);
+        border-radius: 90%;
+        position: absolute;
+        top: -15vh;
+        right: -20vw;    
+        z-index: -1; 
+    }
+
+    .degradado2{
+        width: 1050px;
+        height: 700px;
+        rotate: 25deg;
+        background: linear-gradient(to bottom, #FF7D29 50%, #dbacbc00 90%);
+        filter: blur(70px);
+        border-radius: 90%;
+        position: absolute;
+        bottom: -65vh;
+        left: -13vw;    
+        z-index: -1; 
+    }
+    .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 40;
+        }
+        .menu-overlay.active {
+            display: block;
+        }
+        #mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-color: transparent;
+            z-index: 50;
+            padding: 2rem;
+            overflow-y: auto;
+            transition: background-color 0.3s ease;
+        }
+        #mobile-menu.active {
+            display: block;
+            background-color: #FFBF78;
+        }
+  </style>
+</head>
+</head>
+<body>
+  <header class="z-50 flex  justify-between px-8 py-10 text-lg gap-6">
+    <div class="flex justify-between items-center w-full gap-5">
+      <div class="logo"></div>
+        <ul class="hidden gap-5 md:flex md:ml-auto">
+            <li><a href="index.html" class="hover:text-[#FF7D29] transition duration-200">Inicio</a></li>
+            <li><a href="registro.html" class="hover:text-[#FF7D29] transition duration-200">Registrar</a></li>
+            <li><a href="#" class="hover:text-[#FF7D29] transition duration-200">Opciones</a></li>
+            <li><a href="#" class="hover:text-[#FF7D29] transition duration-200">Salida</a></li>
+        </ul>
+    </div>
+    <div class="md:hidden">
+        <button id="menu-toggle" class="text-[#FF7D29] focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+  </header>
+
+  <div id="menu-overlay" class="menu-overlay"></div>
+  <div id="mobile-menu" class="text-white">
+    <ul class="flex flex-col gap-5">
+        <li><a href="#" class="hover:text-[#FF7D29] transition duration-200">Inicio</a></li>
+        <li><a href="registro.html" class="hover:text-[#FF7D29] transition duration-200">Registrar</a></li>
+        <li><a href="#" class="hover:text-[#FF7D29] transition duration-200">Opciones</a></li>
+        <li><a href="#" class="hover:text-[#FF7D29] transition duration-200">Salida</a></li>
+    </ul>
+  </div>
+  <main class="">
+
+    <div class="fondo -z-50 absolute top-0 left-0 w-screen h-screen overflow-hidden">
+        <div class="degradado1 w-[300px] h-[200px] top-64  sm:w-[500px] sm:h-[400px] sm:top-20 md:w-[700px] md:h-[700px] md:right-[-33vw] lg:w-[1050px]"></div>
+        <div class="degradado2 w-[300px] h-[200px] top-[80vh] sm:w-[600px] sm:h-[600px]"></div>
+    </div>
+    <div class="informacionHero pl-9 top-40 text-start relative">
+        <h2 class="md:w-2/4 w-3/4 text-4xl font-medium">Disfruta de las mejores galletas con <span class="text-[#FF7D29] font-semibold">Glacitas</span></h2>
+        <p class="w-3/4">Ahora con nuevas presentaciones más saludables y economicas</p>
+        <button class="botonHero mt-10 rounded-sm bg-[#FF7D29] p-3 transition duration-300 hover:text-white"><a href="catalogo.html">Ver catalogo</a></button>
+    </div>
+    <div class="imagenesHero lg:block hidden">
+        <img src="./img/imagen1.png" class="absolute right-36 top-44 z-40 rotate-[3deg] drop-shadow-2xl w-80">
+        <img src="./img/imagen2.png" class="absolute right-36  rotate-[24deg] z-50 drop-shadow-2xl w-96">
+    
+    </div>
+
+  </main>
+
+  <div class="animated-image-container max-w-[100vw] max-h-screen">
+    <img src="./img/galletaCafe.png" alt="Galleta Café" class="animated-image">
+    <img src="./img/galletaChocolate.png" alt="Galleta Chocolate" class="animated-image">
+    <img src="./img/galletaChoconieve.png" alt="Galleta Choconieve" class="animated-image">
+    <img src="./img/galletaFresa.png" alt="Galleta Fresa" class="animated-image">
+    <img src="./img/galletaLimon.png" alt="Galleta Limón" class="animated-image">
+  </div>
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      var menu = document.getElementById('mobile-menu');
+      var overlay = document.getElementById('menu-overlay');
+      menu.classList.toggle('active');
+      overlay.classList.toggle('active');
+    });
+
+    document.getElementById('menu-overlay').addEventListener('click', function () {
+      var menu = document.getElementById('mobile-menu');
+      var overlay = document.getElementById('menu-overlay');
+      menu.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  </script>
+</body>
+</html>

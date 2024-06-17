@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - Galletas Glacitas</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #FFFFFF;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23fffff6' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23ffffed' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23feffe4' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23feffdb' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23FEFFD2' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    nav {
+      background-color: #FF7D29;
+    }
+
+    footer {
+      background-color: #FF7D29;
+    }
+    
+    button {
+      background-color: #FF7D29;
+    }
+
+    button:hover {
+      background-color: #a74300;
+    }
+
+    .animated-image-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+
+    .animated-image {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      opacity: 0.8;
+      animation-duration: 15s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+
+    .animated-image:nth-child(1) {
+      top: 10vh;
+      left: -30vw;
+      animation-name: moveDiagonal1;
+    }
+
+    .animated-image:nth-child(2) {
+      top: 30vh;
+      left: -20vw;
+      animation-name: moveDiagonal2;
+      animation-duration: 12s;
+    }
+
+    .animated-image:nth-child(3) {
+      top: 50vh;
+      left: -10vw;
+      animation-name: moveDiagonal3;
+      animation-duration: 10s;
+    }
+
+    .animated-image:nth-child(4) {
+      top: 70vh;
+      left: 110vw;
+      animation-name: moveDiagonal4;
+      animation-duration: 13s;
+    }
+
+    .animated-image:nth-child(5) {
+      top: 90vh;
+      left: 120vw;
+      animation-name: moveDiagonal5;
+      animation-duration: 11s;
+    }
+
+    @keyframes moveDiagonal1 {
+      0% { transform: translate(-30vw, 0); }
+      100% { transform: translate(calc(100vw + 30vw), calc(100vh + 30vh)); }
+    }
+
+    @keyframes moveDiagonal2 {
+      0% { transform: translate(-20vw, 0); }
+      100% { transform: translate(calc(100vw + 20vw), calc(100vh + 20vh)); }
+    }
+
+    @keyframes moveDiagonal3 {
+      0% { transform: translate(-10vw, 0); }
+      100% { transform: translate(calc(100vw + 10vw), calc(100vh + 10vh)); }
+    }
+
+    @keyframes moveDiagonal4 {
+      0% { transform: translate(110vw, 0); }
+      100% { transform: translate(calc(-100vw - 10vw), calc(-100vh - 10vh)); }
+    }
+
+    @keyframes moveDiagonal5 {
+      0% { transform: translate(120vw, 0); }
+      100% { transform: translate(calc(-100vw - 20vw), calc(-100vh - 20vw)); }
+    }
+
+    @media (max-width: 768px) {
+      .animated-image {
+        width: 80px;
+        height: 80px;
+      }
+
+      main {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class=" p-4 text-white">
+    <div class="container mx-auto flex justify-center items-center">
+      <a href="index.html" class="text-2xl font-bold"><img class="h-20 " src="./img/logo.png" alt=""></a>
+    </div>
+  </nav>
+  <main class="container mx-auto my-8">
+    <section class="text-center">
+      <h1 class="text-4xl font-bold mb-4">Registro de Usuario</h1>
+      <form id="registrationForm" action="#" method="POST" class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <div class="mb-4">
+          <label for="username" class="block text-sm font-semibold mb-2">Nombre de Usuario</label>
+          <input type="text" id="username" name="username" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" required>
+          <p id="usernameError" class="text-red-500 text-xs mt-1 hidden">El nombre de usuario debe tener al menos 4 caracteres.</p>
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-semibold mb-2">Correo Electrónico</label>
+          <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" required>
+          <p id="emailError" class="text-red-500 text-xs mt-1 hidden">Por favor, introduce una dirección de correo electrónico válida.</p>
+        </div>
+        <div class="mb-4">
+          <label for="password" class="block text-sm font-semibold mb-2">Contraseña</label>
+          <input type="password" id="password" name="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" required>
+          <p id="passwordError" class="text-red-500 text-xs mt-1 hidden">La contraseña debe tener al menos 8 caracteres.</p>
+        </div>
+        <div class="mb-6">
+          <button type="submit" class="w-full text-white py-2 px-4 rounded-lg transition duration-300">Registrarse</button>
+        </div>
+        <p class="text-sm text-gray-600">¿Ya tienes una cuenta? <a href="#" class="text-blue-600 hover:underline">Iniciar sesión</a></p>
+      </form>
+    </section>
+  </main>
+  <div class="animated-image-container">
+    <img src="./img/galletaCafe.png" alt="Galleta Café" class="animated-image">
+    <img src="./img/galletaChocolate.png" alt="Galleta Chocolate" class="animated-image">
+    <img src="./img/galletaChoconieve.png" alt="Galleta Choconieve" class="animated-image">
+    <img src="./img/galletaFresa.png" alt="Galleta Fresa" class="animated-image">
+    <img src="./img/galletaLimon.png" alt="Galleta Limón" class="animated-image">
+  </div>
+  <footer class=" text-white py-4 mt-auto">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Galletas Glacitas. Todos los derechos reservados.</p>
+      <p><a href="registro.html" class="text-white underline hover:text-gray-300">Contacto</a>
+        <a href="registro.html" class="text-white underline hover:text-gray-300">Términos y Condiciones</a>
+        <a href="registro.html" class="text-white underline hover:text-gray-300">Política de Privacidad</a>
+      </p>
+    </div>
+  </footer>
+  <script>
+    const registrationForm = document.getElementById('registrationForm');
+    const usernameInput = document.getElementById('username');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const usernameError = document.getElementById('usernameError');
+    const emailError = document.getElementById('emailError');
+    const passwordError = document.getElementById('passwordError');
+    
+    registrationForm.addEventListener('submit', function(event) {
+      let valid = true;
+      
+      if (usernameInput.value.length < 4) {
+        usernameError.classList.remove('hidden');
+        valid = false;
+      } else {
+        usernameError.classList.add('hidden');
+      }
+
+      if (!isValidEmail(emailInput.value)) {
+        emailError.classList.remove('hidden');
+        valid = false;
+      } else {
+        emailError.classList.add('hidden');
+      }
+
+      if (passwordInput.value.length < 8) {
+        passwordError.classList.remove('hidden');
+        valid = false;
+      } else {
+        passwordError.classList.add('hidden');
+      }
+
+      if (!valid) {
+        event.preventDefault();
+      }
+    });
+
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+  </script>
+</body>
+</html>
