@@ -180,18 +180,20 @@
             display: block;
         }
         #mobile-menu {
-            display: none;
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background-color: transparent;
-            z-index: 50;
-            padding: 2rem;
-            overflow-y: auto;
-            transition: background-color 0.3s ease;
-        }
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: auto; 
+    max-width: 80%; 
+    height: auto; 
+    max-height: 80%;
+    background-color: #FFBF78;
+    z-index: 50;
+    padding: 2rem;
+    overflow-y: auto;
+    transition: background-color 0.3s ease;
+}
         #mobile-menu.active {
             display: block;
             background-color: #FFBF78;
@@ -220,7 +222,7 @@
   </header>
 
   <div id="menu-overlay" class="menu-overlay"></div>
-  <div id="mobile-menu" class="text-white">
+  <div id="mobile-menu" class="text-white ">
     <ul class="flex flex-col gap-5">
         <li><a href="#" class="hover:text-[#FF7D29] transition duration-200">Inicio</a></li>
         <li><a href="registro.html" class="hover:text-[#FF7D29] transition duration-200">Registrar</a></li>
