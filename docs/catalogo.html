@@ -7,11 +7,15 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <nav class="p-4 text-white">
     <div class="container mx-auto flex justify-between items-center">
-      <a href="index.html" class="text-2xl font-bold"><img class="h-20 " src="./img/logo.png" alt=""></a>
+      <button onclick="history.back()" class="button mx-2 hover:underline"><i class="fa-solid fa-house"></i></button>
+      <div class="flex items-center">
+        <a href="index.html" class="text-2xl font-bold"><img class="h-20" src="./img/logo.png" alt=""></a>
+      </div>
       <div class="hidden md:block">
         <a href="index.html" class="button mx-2 hover:underline">Inicio</a>
         <a href="registro.html" class="button mx-2 hover:underline">Registrar</a>
@@ -19,67 +23,87 @@
     </div>
   </nav>
 
-  <main class="container mx-auto my-8">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="card cafe  rounded-lg shadow-lg overflow-hidden hover:shadow-xl relative flex justify-center items-center">
-        <div class="w-full h-48 sm:h-64 bg-cover bg-center">
-          <img src="./img/cafe.png" alt="Café" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 card-content">
-            <div class="text-white text-center">
-              <h3 class="text-lg sm:text-xl font-semibold mb-2">Café</h3>
-              <p class="text-gray-100 text-sm sm:text-base">Disfruta del intenso y reconfortante sabor a café en cada bocado.</p>
+  <main class="container mx-auto my-8 flex items-center">
+    <div class="slider-container relative w-full max-w-screen-lg mx-auto">
+      <div class="slider-wrapper flex justify-center items-center">
+        <div class="card cafe rounded-lg shadow-lg overflow-hidden relative flex justify-center items-center active">
+          <div class="w-full h-96 sm:h-120 bg-cover bg-center relative">
+            <img src="./img/cafe.png" alt="Café" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 card-content">
+              <div class="text-white text-center">
+                <h3 class="text-lg sm:text-xl font-semibold mb-2">Café</h3>
+                <p class="text-gray-100 text-sm sm:text-base">Disfruta del intenso y reconfortante sabor a café en cada bocado.</p>
+              </div>
             </div>
+            <p class="titulo permanent-marker-regular flex justify-center text-3xl sm:text-4xl">Cafe</p>
           </div>
-          <p class="titulo permanent-marker-regular flex justify-center text-3xl sm:text-4xl">Cafe</p>
+        </div>
+  
+
+        <div class="card chocolate rounded-lg shadow-lg overflow-hidden relative flex justify-center items-center hidden">
+          <div class="w-full h-96 sm:h-120 bg-cover bg-center relative">
+            <img src="./img/chocolate.png" alt="Chocolate" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 card-content">
+              <div class="text-white text-center">
+                <h3 class="text-lg sm:text-xl font-semibold mb-2">Chocolate</h3>
+                <p class="text-gray-100 text-sm sm:text-base">Deléitate con la rica y cremosa experiencia del chocolate puro.</p>
+              </div>
+            </div>
+            <p class="titulo permanent-marker-regular flex justify-center text-3xl sm:text-4xl">Chocolate</p>
+          </div>
+        </div>
+  
+
+        <div class="card limon rounded-lg shadow-lg overflow-hidden relative flex justify-center items-center hidden">
+          <div class="w-full h-96 sm:h-120 bg-cover bg-center relative">
+            <img src="./img/limon.png" alt="Limón" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 card-content">
+              <div class="text-white text-center">
+                <h3 class="text-lg sm:text-xl font-semibold mb-2">Limón</h3>
+                <p class="text-gray-100 text-sm sm:text-base">Fresco y vibrante, el sabor a limón te llenará de energía.</p>
+              </div>
+            </div>
+            <p class="titulo permanent-marker-regular flex justify-center text-3xl sm:text-4xl">Limón</p>
+          </div>
+        </div>
+  
+
+        <div class="card fresa rounded-lg shadow-lg overflow-hidden relative flex justify-center items-center hidden">
+          <div class="w-full h-96 sm:h-120 bg-cover bg-center relative">
+            <img src="./img/fresa.png" alt="Fresa" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 card-content">
+              <div class="text-white text-center">
+                <h3 class="text-lg sm:text-xl font-semibold mb-2">Fresa</h3>
+                <p class="text-gray-100 text-sm sm:text-base">La dulzura natural de las fresas en una deliciosa galleta.</p>
+              </div>
+            </div>
+            <p class="titulo permanent-marker-regular flex justify-center text-3xl sm:text-4xl">Fresa</p>
+          </div>
+        </div>
+  
+
+        <div class="card choconieve rounded-lg shadow-lg overflow-hidden relative flex justify-center items-center hidden">
+          <div class="w-full h-96 sm:h-120 bg-cover bg-center relative">
+            <img src="./img/choconieve.png" alt="Choconieve" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 card-content">
+              <div class="text-white text-center">
+                <h3 class="text-lg sm:text-xl font-semibold mb-2">Choconieve</h3>
+                <p class="text-gray-100 text-sm sm:text-base">Una combinación perfecta de chocolate y vainilla, una delicia para todos.</p>
+              </div>
+            </div>
+            <p class="titulo permanent-marker-regular flex justify-center text-3xl sm:text-4xl">Choconieve</p>
+          </div>
         </div>
       </div>
-      <div class="card chocolate rounded-lg shadow-lg overflow-hidden hover:shadow-xl relative flex justify-center items-center">
-        <div class="w-full h-48 sm:h-64 bg-cover bg-center";">
-          <img src="./img/chocolate.png" alt="Chocolate" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 card-content">
-            <div class="text-white text-center">
-              <h3 class="text-lg sm:text-xl font-semibold mb-2">Chocolate</h3>
-              <p class="text-gray-100 text-sm sm:text-base">Deléitate con la rica y cremosa experiencia del chocolate puro.</p>
-            </div>
-          </div>
-          <p class="titulo permanent-marker-regular flex justify-center text-3xl sm:text-4xl">Chocolate</p>
-        </div>
-      </div>
-      <div class="card limon rounded-lg shadow-lg overflow-hidden hover:shadow-xl relative flex justify-center items-center">
-        <div class="w-full h-48 sm:h-64 bg-cover bg-center">
-          <img src="./img/limon.png" alt="Limón" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 card-content">
-            <div class="text-white text-center">
-              <h3 class="text-lg sm:text-xl font-semibold mb-2">Limón</h3>
-              <p class="text-gray-100 text-sm sm:text-base">Fresco y vibrante, el sabor a limón te llenará de energía.</p>
-            </div>
-          </div>
-          <p class="titulo permanent-marker-regular flex justify-center text-3xl sm:text-4xl">Limón</p>
-        </div>
-      </div>
-      <div class="card fresa rounded-lg shadow-lg overflow-hidden hover:shadow-xl relative flex justify-center items-center">
-        <div class="w-full h-48 sm:h-64 bg-cover bg-center" >
-          <img src="./img/fresa.png" alt="Fresa" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 card-content">
-            <div class="text-white text-center">
-              <h3 class="text-lg sm:text-xl font-semibold mb-2">Fresa</h3>
-              <p class="text-gray-100 text-sm sm:text-base">La dulzura natural de las fresas en una deliciosa galleta.</p>
-            </div>
-          </div>
-          <p class="titulo permanent-marker-regular flex justify-center text-3xl sm:text-4xl">Fresa</p>
-        </div>
-      </div>
-      <div class="card choconieve rounded-lg shadow-lg overflow-hidden hover:shadow-xl relative flex justify-center items-center">
-        <div class="w-full h-48 sm:h-64 bg-cover bg-center">
-          <img src="./img/choconieve.png" alt="choconieve" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 card-content">
-            <div class="text-white text-center">
-              <h3 class="text-lg sm:text-xl font-semibold mb-2">Choconieve</h3>
-              <p class="text-gray-100 text-sm sm:text-base">Una combinación perfecta de chocolate y vainilla, una delicia para todos.</p>
-            </div>
-          </div>
-          <p class="titulo permanent-marker-regular flex justify-center text-3xl sm:text-4xl">Choconieve</p>
-        </div>
+  
+
+      <div class="flex justify-center md:justify-between mt-4 md:mt-8">
+        <button class="slider-button prev p-3 rounded-full text-white bg-orange-500 shadow-lg hover:bg-orange-600 hover:shadow-xl transition duration-300 hover:scale-110">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <button class="slider-button next p-3 rounded-full text-white bg-orange-500 shadow-lg hover:bg-orange-600 hover:shadow-xl transition duration-300 hover:scale-110">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
       </div>
     </div>
   </main>
@@ -92,10 +116,11 @@
     <img src="./img/galletaLimon.png" alt="Galleta Limón" class="animated-image">
   </div>
 
-  <footer class=" text-white py-4 mt-auto">
+  <footer class="text-white py-4">
     <div class="container mx-auto text-center">
       <p>&copy; 2024 Galletas Glacitas. Todos los derechos reservados.</p>
-      <p><a href="#" class="text-white underline hover:text-gray-300">Contacto</a>
+      <p>
+        <a href="#" class="text-white underline hover:text-gray-300">Contacto</a>
         <a href="#" class="text-white underline hover:text-gray-300">Términos y Condiciones</a>
         <a href="#" class="text-white underline hover:text-gray-300">Política de Privacidad</a>
       </p>
